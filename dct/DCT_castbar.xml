@@ -1,0 +1,52 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<!-- Template: CastBar -->
+	<Frame name="DCTCastBarTemplate" hidden="true" parent="UIParent" virtual="true" inherits="BackdropTemplate"  mixin="BackdropTemplateMixin">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_TOOLTIP_DCTCastBarTemplate_1111" type="global"/>
+			<KeyValue key="backdropColor" value="DCTCastBarTemplate_BORDERDROP_COLOR" type="global"/>
+		</KeyValues>
+		<Size x="320" y="20"/>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Frames>
+			<StatusBar name="$parentStatus">
+				<Anchors>
+					<Anchor point="TOPLEFT"/>
+					<Anchor point="BOTTOMRIGHT"/>
+				</Anchors>
+				<BarTexture name="$parentTexture" file="Interface\TargetingFrame\UI-StatusBar"/>
+				<BarColor r="1" g="1" b="0"/>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBackground">
+							<Color r="0.3" g="0.3" b="0.3" a="0.6"/>
+							<Anchors>
+								<Anchor point="TOPLEFT"/>
+								<Anchor point="BOTTOMRIGHT"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<!-- 
+					<Layer level="OVERLAY">
+						<Texture name="$parentSpark" file="Interface\CastingBar\UI-CastingBar-Spark" alphaMode="ADD">
+							<Size>
+								<AbsDimension x="12" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="CENTER"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					-->
+				</Layers>
+			</StatusBar>
+		</Frames>
+		<Scripts>
+			<OnUpdate>
+				--DCTCastBar_OnUpdate(self,elapsed);				
+			</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>
